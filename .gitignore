@@ -8,5 +8,5 @@ trial
 */trial/*
 dataset
 */.dataset/*
-VENV
-*/.VENV/*
+/.__pycache__/*
+/.VENV/*
