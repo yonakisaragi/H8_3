@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <title>Australia Rain Prediction</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Australia Rain Prediction</h1>
+            <form action="{{ url_for('predict') }}" method="post">
+                <label class="h2" for="location">Your Location</label>
+                <select name="location" id="location">
+
+                </select>
+                <p class="h2">Today Data:</p>
+                <label for="minTemp">Minimum Temp (℃)</label>
+                <input type="number" name="minTemp" id="minTemp" placeholder="0" required="required"/>
+                
+                <label for="rainfall">Rainfall (mm)</label>
+                <input type="number" name="rainfall" id="rainfall" min="0" placeholder="0" required="required"/>
+                
+                <label for="windGustDir">Highest Wind Speed Direction</label>
+                <select name="windGustDir" id="windGustDir">
+                    
+                </select>
+
+                <label for="windGustSpeed">Highest Wind Speed (km/h)</label>
+                <input type="number" name="windGustSpeed" id="windGustSpeed" min="0" placeholder="0" required="required"/>
+
+                <label for="windDir9am">Wind Direction at 9AM</label>
+                <select name="windDir9am" id="windDir9am">
+                    
+                </select>
+
+                <label for="windSpeed9am">Wind Speed at 9AM (km/h)</label>
+                <input type="number" name="windSpeed9am" id="windSpeed9am" min="0" placeholder="0" required="required"/>
+
+                <label for="windDir3pm">Wind Direction at 3PM</label>
+                <select name="windDir3pm" id="windDir3pm">
+                    
+                </select>
+
+                <label for="windSpeed3pm">Wind Speed at 3PM (km/h)</label>
+                <input type="number" name="windSpeed3pm" id="windSpeed3pm" min="0" placeholder="0" required="required"/>
+
+                <label for="humidity9am">Humidity at 9AM (%)</label>
+                <input type="number" name="humidity9am" id="humidity9am" min="0" max="100" placeholder="0" required="required"/>
+
+                <label for="humidity3pm">Humidity at 3PM (%)</label>
+                <input type="number" name="humidity3pm" id="humidity3pm" min="0" max="100" placeholder="0" required="required"/>
+
+                <label for="cloud9am">Cloud Size at 9AM (0-8)</label>
+                <input type="number" name="cloud9am" id="cloud9am" min="0" max="8" placeholder="0" required="required"/>
+
+                <label for="cloud3pm">Cloud Size at 3PM (0-8)</label>
+                <input type="number" name="cloud9pm" id="cloud3pm" min="0" max="8" placeholder="0" required="required"/>
+
+                <label>Raining Today?</label>
+                </br>
+                <input type="radio" name="rain_bool" id="rain_yes" value="1">
+                <label for="rain_yes">Yes</label>
+                </br>
+                <input type="radio" name="rain_bool" id="rain_no" value="0">
+                <label for="rain_no">No</label>
+                </br></br>
+
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </form>
+            <p class="message">{{ prediction_text }}</p>
+        </div>
+        <div class="container">
+            <p>Made By</p>
+            <p class="default">PYTN-KS09-003 - Johnson Rouslie Junior</p>
+            <p class="default">PYTN-KS09-013 - Cindo Fara Aqsyada Agatha</p>
+            <p class="default">PYTN-KS09-023 - Anugrah Aidin Yotolembah</p>
+        </div>
+        <script src="../static/js/script.js" type="module"></script>
+    </body>
+</html>
