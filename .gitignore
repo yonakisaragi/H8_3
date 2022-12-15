@@ -7,8 +7,8 @@ obes.xls
 trial
 */trial/*
 dataset
-*/.dataset/*
+*/dataset/*
 */.__pycache__/*
-*/.VENV/*
+*/VENV/*
 H8FP3Deployment
-*/.H8FP3Deployment/*
+*/H8FP3Deployment/*
